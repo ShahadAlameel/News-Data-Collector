@@ -7,6 +7,10 @@ class GuardianSpider(scrapy.Spider):
     name = "guardian"
     start_urls = ["https://www.theguardian.com/au"]
 
+    def __init__(self, crawler):
+        super(GuardianSpider, self).__init__()
+        self.crawler = crawler
+
     def parse(self, response):
         articles = response.xpath('//a[contains(@data-link-name, "news")]')
         for article in articles:
