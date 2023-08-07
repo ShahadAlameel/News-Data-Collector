@@ -1,15 +1,15 @@
 # News-Data-Collector
 News-Data-Collector is a Python web scraping project that extracts news article data from The Guardian website and saves it to a MongoDB database.
 
-# Description
+## Description
 News-Data-Collector (GuardianSpider) is a web scraping project built using the Scrapy framework. It crawls The Guardian's Australian edition (https://www.theguardian.com/au) and extracts news article data, including article title, content, and author information. The extracted data is then saved to a MongoDB database.
 
-# Installation
+## Installation
 To use GuardianSpider, you need to have Python 3.x and the required dependencies installed.\
 \
 `pip install -r requirements.txt`
 
-# Configuration
+## Configuration
 GuardianSpider uses settings defined in the Scrapy project settings.py file to customize its behavior. Make sure to configure the MongoDB URI, database name, and collection name to match your MongoDB setup.
 ```
 MONGODB_URI = "mongodb://localhost:27017/"
@@ -17,7 +17,7 @@ MONGODB_DATABASE = "guardian_articles"
 MONGODB_COLLECTION = "articles"
 ```
 
-# Usage
+## Usage
 To run GuardianSpider, execute the following commands:\
 \
 `cd guardian_articles`
@@ -28,12 +28,12 @@ To run GuardianSpider, execute the following commands:\
 \
 This will start the web scraping process. The spider will crawl The Guardian website, extract news article data, and save it to the specified MongoDB database.
 
-# Tests 
+## Tests 
 To run tests for GuardianSpider, execute the following command: \
 \
 `python -m unittest discover tests`
 
-# Examples
+## Examples
 To show all articles: \
 `http://<api-url>/news_articles`
 
