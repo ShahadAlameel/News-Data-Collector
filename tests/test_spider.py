@@ -5,13 +5,31 @@ from scrapy.utils.test import get_crawler
 from guardian_articles.guardian_articles.spiders.guardian_spider import GuardianSpider
 
 class TestGuardianSpider(unittest.TestCase):
+    '''
+    Test class for GuardianSpider.
+
+    This class contains test methods to verify the functionality of the GuardianSpider
+    spider, including parsing article data and saving to MongoDB.
+    '''
 
     def setUp(self):
+        '''
+        Method to set up the test environment before each test case.
+        '''
+
         # Create a dummy crawler object
         self.dummy_crawler = get_crawler(spidercls=GuardianSpider)
 
     @patch('guardian_articles.guardian_articles.spiders.guardian_spider.MongoClient')
     def test_parse_article_data_extraction(self, mock_mongo_client):
+        '''
+        Test method to verify the parsing of an article page.
+
+        This test uses a mocked response object to simulate an article page and checks
+        whether the parsing logic correctly extracts the article title, content, and
+        author information.
+        '''
+
         # Sample test data for the response
         sample_article_url = "https://www.theguardian.com/au/some-article"
         sample_article_title = "Sample Article Title"
